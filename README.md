@@ -4,40 +4,40 @@ This repository contains the Jupyter notebooks and associated R scripts used to 
 ## Repository Structure
 
 ### Data
-bambu_result
+#### bambu_result
 Outputs of bambu, including quantification of genes and transcripts, and the gtf file.
 
-jaffal_result
+#### jaffal_result
 Summrised result of JAFFAL.
 ### Code
-fig2d.ipynb
+#### fig2d.ipynb
 This notebook generates Figure 2d.
 
-fig3&5.ipynb
+#### fig3&5.ipynb
 This notebook is used to create the most subfigures of Figures 3 and 5, and the data processing of these figures.
 
-fig3d.ipynb
+#### fig3d.ipynb
 This notebook specifically focuses on generating Figure 3d.
 
-fig4.ipynb
+#### fig4.ipynb
 This notebook is responsible for Figure 4, containing filterings of fusion transcripts and code of figure4b, 4c, 4e&f.
 
-fig6&hierarchy_system.ipynb
+#### fig6&hierarchy_system.ipynb
 This notebook generates Figure 6 and includes the hierarchical system analysis.
 
-new_group_gene_deseq_fdr.R
+#### new_group_gene_deseq_fdr.R
 Script for differential gene expression analysis using DESeq with FDR adjustment of ten tissues.
 
-new_all.R
+#### new_all.R
 Performs global analysis for the dataset.
 
-transplotr.R
+#### transplotr.R
 Visualizes structures of isoforms.
 
-fig_5f.R
+#### fig_5f.R
 Generates Figure 5f.
 
-bar_kegg.R
+#### bar_kegg.R
 Produces bar plots for KEGG pathway analysis.
 
 ## Prerequisites
