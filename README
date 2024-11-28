@@ -6,10 +6,10 @@ This repository contains the Jupyter notebooks and associated R scripts used to 
 ### Data
 bambu_result
 Outputs of bambu, including quantification of genes and transcripts, and the gtf file.
-### Code
-code.txt
-Softwares and commands used in this paper.
 
+jaffal_result
+Summrised result of JAFFAL.
+### Code
 fig2d.ipynb
 This notebook generates Figure 2d.
 
