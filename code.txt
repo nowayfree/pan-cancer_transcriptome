@@ -1,0 +1,41 @@
+#####Filtering the low quality reads
+NanoFilt -l 150 -q 7 input.file  > output.file
+
+#####Draw the figures about the quality control
+NanoPlot --fastq barcode.qc.fastq -o fastq-plots --maxlength 40000 --minlength 100  -t 40 --plots kde  --loglength     --N50  --color green  -f jpg --readtype 1D
+
+#####umi_tools extracted the UMI from long reads
+umi_tools extract --extract-method=regex --bc-pattern="(?P<discard_1>.{1,200})(?P<cell_1>CTCTATCTTC){s<=10}(?P<umi_1>AAA){s<=1}(?P<umi_2>.{22}){s<=22}(?P<umi_3>AAA){s<=1}T{4}"  --filtered-out=barcode02.undefine.fastq  -L processed.log -I barcode02.fastq   -S barcode02.fastq.defined1 &
+
+#####pychopper performed further quality control and adjusted the orientation of reads
+pychopper -U -y -t 4 -z 300 -S pychopper.stat.txt -r pychopper.report.pdf -w rescued.fq input.fastq output.pychopper.fastq
+
+#####Using StringTie to quantify the expression of genes or isoforms.
+minimap2   -ax splice -u b  -t  15 --secondary=no  database/GRCh38.p13.genome.fa input.consensus.fasta > output.consensus.sam
+samtools view -@ 50 -bS barcode02.map.consensus.sam > barcode02.map.consensus.bam
+samtools sort -@ 40 barcode02.map.consensus.bam > barcode02.map.consensus.sort.bam
+
+stringtie ${PA}/${FASTQ}.ub.srt.bam -e -G ${REF_GFF3} -L -v -p ${NCORE} -t -c 1.5 -o  ${FASTQ}.ub.gff
+stringtie --merge -o AMDs2_165.gtf -m 200 -p 90 BO165gff.txt 
+stringtie -e -G AMDs2_total.334.gtf
+
+#####Using Bambu to quantify the expression of genes or isoforms and to discover the novel isoforms
+if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
+BiocManager::install("bambu")
+library(bambu)
+bambuAnnotations <- prepareAnnotations(gtf.file)  
+se <- bambu(reads = bam.file, annotations = bambuAnnotations, genome = fa.file)
+writeBambuOutput(se, path = "./bambu/") 
+
+#####Identification of fusion genes
+./tools/bin/bpipe run ./JAFFAL.groovy <path_to_directory with fastq files>/*fastq
+
+#####Identification of non-coding sequence
+python PLEK.py -fasta gene.fasta -thread 20 -o test
+
+#####Identification alternative splicing
+minimap2   -ax splice -u b  -t  15 --secondary=no  database/GRCh38.p13.genome.fa input.consensus.fasta > output.consensus.sam
+perl ~/software/scISA-Tools-master/bin/sam2gff.pl  input.sam  >  output.gff
+gffcompare -r ../gencode.v38.annotation.gtf  input.gff   -o output.gtf
+python suppa.py generateEvents -i input.gtf -o ios.event -f ioe -e SE SS MX RI FL  -p
+
