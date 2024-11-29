@@ -37,8 +37,8 @@ Visualizes structures of isoforms.
 #### fig_5f.R
 Generates Figure 5f.
 
-#### bar_kegg.R
-Produces bar plots for KEGG pathway analysis.
+#### KEGG&GOBP_plot.R
+Produces bar plots for KEGG and GO_bp pathway analysis.
 
 ## Prerequisites
 To run these notebooks, you need the following:
