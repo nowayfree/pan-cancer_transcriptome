@@ -14,7 +14,7 @@ Summrised result of JAFFAL.
 This notebook generates Figure 2d.
 
 #### fig3&5.ipynb
-This notebook is used to create the most subfigures of Figures 3 and 5, and the data processing of these figures.
+This notebook is used to filter out outliers and create the most subfigures of Figures 3 and 5.
 
 #### fig3d.ipynb
 This notebook specifically focuses on generating Figure 3d.
@@ -29,7 +29,7 @@ This notebook generates Figure 6 and includes the hierarchical system analysis.
 Script for differential gene expression analysis using DESeq with FDR adjustment of ten tissues.
 
 #### new_all.R
-Performs global analysis for the dataset.
+Performs global analysis for the whole dataset.
 
 #### transplotr.R
 Visualizes structures of isoforms.
@@ -38,7 +38,7 @@ Visualizes structures of isoforms.
 Generates Figure 5f.
 
 #### KEGG&GOBP_plot.R
-Produces bar plots for KEGG and GO_bp pathway analysis.
+Produces dot plots and bar plots for KEGG and GO_bp pathway analysis.
 
 ## Prerequisites
 To run these notebooks, you need the following:
