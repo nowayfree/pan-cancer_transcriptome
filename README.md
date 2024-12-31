@@ -55,5 +55,4 @@ Jupyter Notebook: Ensure you have Jupyter Notebook or JupyterLab installed to ru
 
 
 ## Notes
-Ensure that the datasets required for the analyses are available and accessible. Update file paths in the notebooks as necessary.
 For any questions or clarifications regarding the code or figures, please contact dingyy7@mail2.sysu.edu.cn
