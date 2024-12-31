@@ -17,6 +17,9 @@ This notebook generates Figure 2d.
 #### fig3&5.ipynb
 This notebook is used to filter out outliers and create the most subfigures of Figures 3 and 5.
 
+#### junction_sites_overlap.ipynb
+This notebook contains the code for ploting figure 1e.
+
 #### fig3d.ipynb
 This notebook specifically focuses on generating Figure 3d.
 
