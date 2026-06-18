@@ -16,43 +16,43 @@ Summrised result of JAFFAL.
 
 ### Code
 
-#### fig2d.ipynb
+#### fig2d\_revised.ipynb
 
 This notebook generates Figure 2d.
 
-#### fig3\&5.ipynb
+#### fig3\&5\_revised.ipynb
 
 This notebook is used to filter out outliers and create the most subfigures of Figures 3 and 5.
 
-#### fig3d.ipynb
+#### fig3d\_revised.ipynb
 
 This notebook specifically focuses on generating Figure 3d.
 
-#### fig4.ipynb
+#### fig4\_revised.ipynb
 
 This notebook is responsible for Figure 4, containing filterings of fusion transcripts and code of figure4b, 4c, 4e\&f.
 
-#### fig6\&hierarchy\_system.ipynb
+#### fig6\&hierarchy\_system\_revised.ipynb
 
 This notebook generates Figure 6 and includes the hierarchical system analysis.
 
-#### new\_group\_gene\_deseq\_fdr.R
+#### new\_group\_gene\_deseq\_fdr\_revised.R
 
 Script for differential gene expression analysis using DESeq with FDR adjustment of ten tissues.
 
-#### new\_all.R
+#### new\_all\_revised.R
 
 Performs global analysis for the whole dataset.
 
-#### transplotr.R
+#### transplotr\_revised.R
 
 Visualizes structures of isoforms.
 
-#### fig\_5f.R
+#### fig\_5f\_revised.R
 
 Generates Figure 5f.
 
-#### KEGG\&GOBP\_plot.R
+#### KEGG\&GOBP\_plot\_revised.R
 
 Produces dot plots and bar plots for KEGG and GO\_bp pathway analysis.
 
